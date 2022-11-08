@@ -2,7 +2,7 @@
  * @Author: liuwanyong liuwanyong2018@gmail.com
  * @Date: 2022-10-15 16:16:27
  * @LastEditors: liuwanyong liuwanyong2018@gmail.com
- * @LastEditTime: 2022-11-01 23:49:44
+ * @LastEditTime: 2022-11-08 19:00:53
  * @FilePath: /brower/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE##
 -->
@@ -132,7 +132,7 @@ TCP3 次握手之后，浏览器创建请求行，请求头，把 cookie 这类�
 ## 渲染过程
 
 -  html 解析，生成 DOM 树
--  CSS 文件的获取和解析，生成 CSS 树，然后跟 DOM 树结合作用生成渲染树。
+-  CSS 文件的获取和解析，生成 CSSSheet，然后跟 DOM 树结合作用生成渲染树。
 -  JS 执行，对应的 DOM 操作也加入到渲染树上。
 
 ### 生成 DOM 树
@@ -146,6 +146,7 @@ TCP3 次握手之后，浏览器创建请求行，请求头，把 cookie 这类�
 然后就把这些内容解析成浏览器可以 理解的数据结构。
 可以在浏览器里面输入 document.styleSheets。
 
+-  解析 css 文件的代码，生成 cssSheet，这个跟css树有概念区别，这个更标准。
 -  转换 css 属性里面的属性值，标准化，变量，关键词等化为标准的数据。
 -  计算出每个 DOM 节点的样式
    这里需要遵循 CSS 的层叠规则和继承规则了。优先级，覆盖结果，继承属性等等场景。
